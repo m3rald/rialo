@@ -25,7 +25,7 @@ const config = getDefaultConfig({
   appName: CONFIG.name,
   projectId: 'YOUR_PROJECT_ID',
   chains: [mainnet, polygon, optimism, arbitrum, base, sepolia],
-  ssr: true,
+  ssr: false,
 });
 
 const queryClient = new QueryClient();

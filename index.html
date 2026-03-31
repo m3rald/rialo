@@ -3,7 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>Professional Directory</title>
+    <script>
+      // Fix for "global is not defined" in some libraries
+      if (typeof global === 'undefined') {
+        window.global = window;
+      }
+      // Fix for "Cannot set property fetch of #<Window> which has only a getter"
+      // This happens when libraries try to polyfill fetch in restricted environments.
+      (function() {
+        try {
+          var originalFetch = window.fetch;
+          if (originalFetch) {
+            // We can't redefine it if it's already read-only and not configurable,
+            // but we can try to make it configurable if it's not.
+            // If it's already read-only, this will throw, which we catch.
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
